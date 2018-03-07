@@ -151,9 +151,9 @@ void MatchRecToGen::produce(edm::Event& iEvent,const edm::EventSetup& iSetup)
   // First check is a blank association map should be put into the event
   // (i.e. there are either no rec or no gen jets and you can't get a
   // refToBaseProd). Otherwise make and fill the map normally.
-  auto_ptr<CandViewMatchMap> recToGenMap;
-  auto_ptr<CandViewMatchMap> genToRecMap;
-  auto_ptr<CandViewMatchMap> unMatchreco; /// for reco-jet not matched
+  //auto_ptr<CandViewMatchMap> recToGenMap;
+  //auto_ptr<CandViewMatchMap> genToRecMap;
+  //auto_ptr<CandViewMatchMap> unMatchreco; /// for reco-jet not matched
   if(nRec==0 || nGen==0) {
      recToGenMap.reset(new CandViewMatchMap());
      genToRecMap.reset(new CandViewMatchMap());
