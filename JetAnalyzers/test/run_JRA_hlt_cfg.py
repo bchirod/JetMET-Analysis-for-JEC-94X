@@ -94,7 +94,7 @@ process.GlobalTag = cms.ESSource("PoolDBESSource",
     RefreshEachRun = cms.untracked.bool(False),
     RefreshOpenIOVs = cms.untracked.bool(False),
     connect = cms.string('frontier://FrontierProd/CMS_CONDITIONS'),
-    globaltag = cms.string('80X_mcRun2_asymptotic_ForTSGStudies_fromRunIIFall15DR76_v0'),
+    globaltag = cms.string('100X_upgrade2018_realistic_TSG_2018_01_24_13_08_07'),
     #globaltag = cms.string('80X_mcRun2_asymptotic_ForTSGStudies_v0'),
     pfnPrefix = cms.untracked.string('frontier://FrontierProd/'),
     snapshotTime = cms.string('9999-12-31 23:59:59.000'),
@@ -128,7 +128,7 @@ qcdFiles = cms.untracked.vstring(
 ###########################
 #       '/store/relval/CMSSW_7_4_0_pre9/RelValQCD_FlatPt_15_3000_13/GEN-SIM-DIGI-RECO/MCRUN2_74_V7_FastSim-v1/00000/EEC9F0EF-10D4-E411-A6E7-0025905A48D0.root'
     )
-process.maxEvents = cms.untracked.PSet(input = cms.untracked.int32(1000))
+process.maxEvents = cms.untracked.PSet(input = cms.untracked.int32(-1))
 process.source = cms.Source("PoolSource", fileNames = qcdFiles )
 
 
@@ -149,7 +149,7 @@ if not doProducer:
 #process.pfPileUp.PFCandidates = 'particleFlow'
 #process.pfNoPileUp.bottomCollection = 'particleFlow'
 process.load('CommonTools.ParticleFlow.pfNoPileUpJME_cff')
-process.pfPileUp.checkClosestZVertex = False
+process.pfPileUpJME.checkClosestZVertex = False
 
 
 #!
