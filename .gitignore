@@ -1,0 +1,14 @@
+# git will ignore these files:
+*.pyc
+*.txt
+*_cc.d
+*_cc.so
+*.pcm
+*.root
+*.pdf
+*.png
+__init__.py
+
+# git will not consider these directories:
+*HLTBX25JEC*
+*L1Calibration*
