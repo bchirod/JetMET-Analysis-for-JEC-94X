@@ -91,7 +91,7 @@ JetViewCleaner::~JetViewCleaner()
 //______________________________________________________________________________
 void JetViewCleaner::produce(edm::Event& iEvent,const edm::EventSetup& iSetup)
 {
-  auto_ptr<edm::RefToBaseVector<reco::Jet> >
+  //auto_ptr<edm::RefToBaseVector<reco::Jet> >
     cleanJets(new edm::RefToBaseVector<reco::Jet>());
 
   edm::Handle<reco::JetView> jets;
