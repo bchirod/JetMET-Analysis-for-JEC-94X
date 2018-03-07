@@ -95,7 +95,7 @@ void JetResponseAnalyzerProducer::beginJob()
 //______________________________________________________________________________
 void JetResponseAnalyzerProducer::beginEvent()
 {
-   JRAEvt_ = auto_ptr<JRAEvent> (new JRAEvent);
+   //JRAEvt_ = auto_ptr<JRAEvent> (new JRAEvent);
    JRAEvt_->clear();
 }
 
