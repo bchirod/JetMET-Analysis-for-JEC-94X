@@ -42,7 +42,7 @@ git cms-checkdeps -A -a
 scram b -j 6
 rehash
 
-git 
+git clone https://github.com/bchirod/JetMETAnalysis.git
 scram b -j 6
 cd JetMETAnalysis/JetAnalyzers/test/
 voms-proxy-init --voms cms
