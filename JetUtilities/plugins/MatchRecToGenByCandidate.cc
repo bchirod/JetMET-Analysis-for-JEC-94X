@@ -187,8 +187,10 @@ void MatchRecToGenByCandidate::produce(edm::Event& iEvent,const edm::EventSetup&
   }
   
   // two association maps: rec2gen and gen2rec
- // auto_ptr<CandViewMatchMap> recToGenMap(new CandViewMatchMap());
- // auto_ptr<CandViewMatchMap> genToRecMap(new CandViewMatchMap());
+  //auto_ptr<CandViewMatchMap> recToGenMap(new CandViewMatchMap());
+  //auto_ptr<CandViewMatchMap> genToRecMap(new CandViewMatchMap());
+  unique_ptr<CandViewMatchMap> recToGenMap(new CandViewMatchMap());
+  unique_ptr<CandViewMatchMap> genToRecMap(new CandViewMatchMap());
   
   MatchIter_t it=matchSet.begin();
   while (it!=matchSet.end()&&iRecSet.size()>0&&iGenSet.size()>0) {
@@ -208,8 +210,10 @@ void MatchRecToGenByCandidate::produce(edm::Event& iEvent,const edm::EventSetup&
     ++it;
   }
   
-  iEvent.put(recToGenMap,"rec2gen");
-  iEvent.put(genToRecMap,"gen2rec");
+  //iEvent.put(recToGenMap,"rec2gen");
+  //iEvent.put(genToRecMap,"gen2rec");
+  iEvent.put(std::move(recToGenMap),"rec2gen");
+  iEvent.put(std::move(genToRecMap),"gen2rec");
   
   nRecTot_ += nRec;
   nGenTot_ += nGen;
