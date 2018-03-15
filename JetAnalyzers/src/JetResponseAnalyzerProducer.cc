@@ -96,6 +96,7 @@ void JetResponseAnalyzerProducer::beginJob()
 void JetResponseAnalyzerProducer::beginEvent()
 {
    //JRAEvt_ = auto_ptr<JRAEvent> (new JRAEvent);
+   JRAEvt_ = unique_ptr<JRAEvent> (new JRAEvent);
    JRAEvt_->clear();
 }
 
@@ -330,7 +331,7 @@ void JetResponseAnalyzerProducer::produce(edm::Event& iEvent,
      (JRAEvt_->nref)++;
   }
 
-  iEvent.put(JRAEvt_,"JRAEvent");
+  iEvent.put(std::move(JRAEvt_),"JRAEvent");
 
   endEvent();
 
