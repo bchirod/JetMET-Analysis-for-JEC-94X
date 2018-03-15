@@ -92,6 +92,7 @@ JetViewCleaner::~JetViewCleaner()
 void JetViewCleaner::produce(edm::Event& iEvent,const edm::EventSetup& iSetup)
 {
   //auto_ptr<edm::RefToBaseVector<reco::Jet> >
+  unique_ptr<edm::RefToBaseVector<reco::Jet> >
     cleanJets(new edm::RefToBaseVector<reco::Jet>());
 
   edm::Handle<reco::JetView> jets;
@@ -130,7 +131,8 @@ void JetViewCleaner::produce(edm::Event& iEvent,const edm::EventSetup& iSetup)
   nJetsClean_+=cleanJets->size();
 
   delete [] isClean;
-  iEvent.put(cleanJets);
+  //iEvent.put(cleanJets);
+  iEvent.put(std::move(cleanJets));
 }
 
 
@@ -152,4 +154,3 @@ void JetViewCleaner::endJob()
 ////////////////////////////////////////////////////////////////////////////////
 
 DEFINE_FWK_MODULE(JetViewCleaner);
-
