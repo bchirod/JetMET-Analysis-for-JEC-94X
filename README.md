@@ -54,11 +54,8 @@ cd ..
 git cms-addpkg RecoJets/JetProducers
 cd RecoJets/JetProducers/python/
 git clone https://github.com/bchirod/JEC-94X-RecoJet.git
-cd ..
-cd ..
-cd ..
-scram b -j 6
 ```
+copy the file to RecoJets/JetProducers/python folder and then compile.
 
 <a name="ntuple"></a>
 ## Manufacture the Ntuple
