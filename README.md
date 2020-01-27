@@ -57,36 +57,7 @@ scram b -j 6
 cd JetMETAnalysis/JetAnalyzers/test/
 voms-proxy-init --voms cms
 
-cmsrel CMSSW_10_0_0
-cd CMSSW_10_0_0/src
-cmsenv
-git cms-init
 
-git cms-addpkg L1Trigger/L1TGlobal
-git clone https://github.com/cms-l1-dpg/2017-pp-menu-dev -b 2017-07-24 ../2017-pp-menu-dev
-mkdir -p L1Trigger/L1TGlobal/data/Luminosity/startup
-cp ../2017-pp-menu-dev/Apr12/*.xml L1Trigger/L1TGlobal/data/Luminosity/startup/
-
-git cms-addpkg HLTrigger/Configuration
-
-git cms-checkdeps -A -a
-scram b -j 6
-rehash
-
-git clone https://github.com/bchirod/JetMETAnalysis.git
-scram b -j 6
-cd JetMETAnalysis/JetAnalyzers/test/
-voms-proxy-init --voms cms
-
-
-
-
-cd ..
-cd ..
-cd ..
-git cms-addpkg RecoJets/JetProducers
-cd RecoJets/JetProducers/python/
-git clone https://github.com/bchirod/JEC-94X-RecoJet.git
 ```
 copy the file to RecoJets/JetProducers/python folder and then compile.
 
