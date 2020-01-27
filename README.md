@@ -49,7 +49,7 @@ cd RecoJets/JetProducers/python/
 cp /afs/cern.ch/work/b/bchitrod/public/JEC/kt6CaloJets_cfi.py .
 cd ../../..
 
-git cms-addpkg RecoTauTag/RecoTau
+git cms-addpkg RecoTauTag
 cd RecoTauTag/RecoTau/python/
 cp /afs/cern.ch/work/b/bchitrod/public/JEC/recoTauDiscriminantCutMultiplexerDefault_cfi.py .
 cd ../../..
@@ -58,6 +58,7 @@ git cms-checkdeps -A -a
 scram b -j 6
 
 git clone https://github.com/bchirod/JetMETAnalysis.git
+cd JetMETAnalysis/
 git checkout CMSSW_11_0_0_pre4
 git branch
 scram b -j 6
