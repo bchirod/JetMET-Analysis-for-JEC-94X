@@ -26,6 +26,37 @@ This section presents the procedure of JRA for the JEC determination and calibra
 <a name="setup"></a>
 ## Set up the framework
 ```
+export SCRAM_ARCH='slc7_amd64_gcc700'
+cmsrel CMSSW_11_0_0_pre4
+cd CMSSW_11_0_0_pre4/src
+cmsenv
+git cms-init
+
+git cms-addpkg HLTrigger/Configuration
+scram build
+cd HLTrigger/Configuration/test
+./cmsDriver.csh 
+cd ../../..
+
+git cms-addpkg L1Trigger/L1TGlobal
+mkdir -p L1Trigger/L1TGlobal/data/Luminosity/startup
+cp /afs/cern.ch/user/n/ndaci/public/STEAM/L1Menus/2018/L1Menu_Collisions2018_v1_0_0.xml L1Trigger/L1TGlobal/data/Luminosity/startup
+cp /afs/cern.ch/user/n/ndaci/public/STEAM/Prescales/2018/L1PS_2018_06_13_Run317696.xml L1Trigger/L1TGlobal/data/Luminosity/startup
+cp /afs/cern.ch/user/n/ndaci/public/STEAM/Prescales/2018/mask-trivial.xml L1Trigger/L1TGlobal/data/Luminosity/startup
+
+git cms-addpkg RecoJets/JetProducers
+cd RecoJets/JetProducers/python/
+cp /afs/cern.ch/user/m/mdjordje/public/forBhakti/10X_JEC/kt6CaloJets_cfi.py .
+
+git cms-checkdeps -A -a
+scram b -j 6
+
+git clone https://github.com/bchirod/JetMETAnalysis.git
+git checkout CMSSW_11_0_0_pre4
+scram b -j 6
+cd JetMETAnalysis/JetAnalyzers/test/
+voms-proxy-init --voms cms
+
 cmsrel CMSSW_10_0_0
 cd CMSSW_10_0_0/src
 cmsenv
@@ -46,6 +77,8 @@ git clone https://github.com/bchirod/JetMETAnalysis.git
 scram b -j 6
 cd JetMETAnalysis/JetAnalyzers/test/
 voms-proxy-init --voms cms
+
+
 
 
 cd ..
