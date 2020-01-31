@@ -94,7 +94,7 @@ process.GlobalTag = cms.ESSource("PoolDBESSource",
     RefreshEachRun = cms.untracked.bool(False),
     RefreshOpenIOVs = cms.untracked.bool(False),
     connect = cms.string('frontier://FrontierProd/CMS_CONDITIONS'),
-    globaltag = cms.string('100X_upgrade2018_realistic_TSG_2018_01_24_13_08_07'),
+    globaltag = cms.string('106X_mc2017_realistic_v6'),
     #globaltag = cms.string('80X_mcRun2_asymptotic_ForTSGStudies_v0'),
     pfnPrefix = cms.untracked.string('frontier://FrontierProd/'),
     snapshotTime = cms.string('9999-12-31 23:59:59.000'),
@@ -118,7 +118,8 @@ qcdFiles = cms.untracked.vstring(
 # Upgrade with PU #
 ###################
   #'/store/group/phys_jetmet/fengwang/JECFall16HLT/QCD_Pt-15to3000_TuneCUETP8M1_Flat_13TeV_pythia8/Fall16HLTJEC_80X_FlatPU0to70HcalNZSRAW_v1/161128_155705/0001/outputA_1101.root',
-  '/store/group/phys_jetmet/fengwang/JECFall16HLT/QCD_Pt-15to3000_TuneCUETP8M1_Flat_13TeV_pythia8/Fall16HLTJEC_80X_NoPUHcalNZSRAW_v1/161128_155846/0000/outputA_11.root',
+#  '/store/group/phys_jetmet/fengwang/JECFall16HLT/QCD_Pt-15to3000_TuneCUETP8M1_Flat_13TeV_pythia8/Fall16HLTJEC_80X_NoPUHcalNZSRAW_v1/161128_155846/0000/outputA_11.root',
+'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat2018_13TeV_pythia8/MINIAODSIM/NZSNoPU_106X_mc2017_realistic_v6-v2/70000/FFE3BE0E-6907-004B-9170-066E82EB849C.root'
 ######################
 # Upgrade without PU #
 ######################

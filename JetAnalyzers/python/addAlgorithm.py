@@ -20,7 +20,7 @@ from JetMETAnalysis.JetAnalyzers.JetReconstruction_cff import *
 from JetMETAnalysis.JetAnalyzers.TauReconstruction_cff import *
 from JetMETAnalysis.JetAnalyzers.JPTReconstruction_cff import *
 from JetMETAnalysis.JetAnalyzers.JetCorrection_cff     import *
-from RecoTauTag.RecoTau.tauDecayModes_cfi          import *
+from RecoTauTag.TauTagTools.tauDecayModes_cfi          import *
 from CommonTools.PileupAlgos.Puppi_cff import *
 
 stdClusteringAlgorithms = ['ak'] #Options: {ak,kt}
