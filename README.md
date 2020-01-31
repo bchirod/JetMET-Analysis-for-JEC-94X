@@ -27,8 +27,8 @@ This section presents the procedure of JRA for the JEC determination and calibra
 ## Set up the framework
 ```
 export SCRAM_ARCH='slc7_amd64_gcc700'
-cmsrel CMSSW_11_0_0_pre4
-cd CMSSW_11_0_0_pre4/src
+cmsrel CMSSW_10_6_1_patch3
+cd 10_6_1_patch3/src
 cmsenv
 git cms-init
 
