@@ -29,7 +29,7 @@
   <class name="edm::Wrapper<JRAEvent::Flavor>"/>
   <class name="edm::Wrapper<std::vector<JRAEvent::Flavor> >"/>
   <class name="TProfileMDF" ClassVersion="1">
-	<version ClassVersion="1" checksum="329505606"/>
+	<version ClassVersion="1" checksum="538640849"/>
   </class>
   <class name="PUNtuple" ClassVersion="1">
 	<version ClassVersion="1" checksum="331599642"/>
