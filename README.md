@@ -62,7 +62,7 @@ cd JetMETAnalysis/
 git checkout CMSSW_11_0_0_pre4
 git branch
 scram b -j 6
-cd JetMETAnalysis/JetAnalyzers/test/
+cd JetAnalyzers/test/
 voms-proxy-init --voms cms
 
 
