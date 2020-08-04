@@ -22,7 +22,7 @@ public:
    evtid(Long64_t run, Long64_t ls, Long64_t evt, Float_t refpt0, bool runDep) : 
          run_(run), ls_(ls), evt_(evt), refpt0_(refpt0), runDep_(runDep) {}
    
-   bool operator()(evtid const& a, evtid const& b) {
+   bool operator()(evtid const& a, evtid const& b) const {
       if (!a.runDep_ && !b.runDep_) {
          if (a.run_ < b.run_) return true;
       }

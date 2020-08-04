@@ -1,15 +1,15 @@
 #!/bin/bash
 #set up environment and enter the workspace
-export SCRAM_ARCH=slc6_amd64_gcc491
-cd /afs/cern.ch/work/f/fengwang/OnlineJEC/CMSSW_8_0_0/src/ #modify this to your own directory!
+export SCRAM_ARCH=slc7_amd64_gcc820
+cd  /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6/src/ #modify this to your own directory!
 eval $(scramv1 runtime -sh)
 cd JetMETAnalysis/JetAnalyzers/test/
 
 #----- Please modify these to your own paths ---------------
-inpath="/store/user/fengwang/QCDHLT/"
-inpath2="/store/user/fengwang/QCDHLT_NoPU/"
-midpath="/tmp/fengwang/"
-outpath="/store/group/phys_jetmet/fengwang/HLTBX25JECL1/"
+inpath="/eos/cms/store/group/phys_jetmet/bchitrod/data/11X_QCD_PU200_JRA/"
+inpath2="/eos/cms/store/group/phys_jetmet/bchitrod/data/11X_QCD_NoPU_JRA/"
+midpath="/eos/cms/store/group/phys_jetmet/bchitrod/data/tmp/"
+outpath="/eos/cms/store/group/phys_jetmet/bchitrod/data/JEC1/PreL1/"
 #-----------------------------------------------------------
 
 num=$1
@@ -33,9 +33,9 @@ do
     echo $midfile
     echo $file
 	printf "Copy file from eos to tmp..."
-	cmsStage $inpath$infile $midpath
+	cp $inpath$infile $midpath
     mv  $midpath$infile   $midpath$midfile 
-    cmsStage $inpath2$file  $midpath
+    cp $inpath2$file  $midpath
 
     label2=`printf $num2`
 
@@ -51,10 +51,10 @@ do
     outfile4=$outstring4$label"_"$label2".root"
 
 	printf "Copy file from tmp back to eos..."
-	cmsStage ./$outfile1 $outpath/
-	cmsStage ./$outfile2 $outpath/
-	cmsStage ./$outfile3 $outpath/
-	cmsStage ./$outfile4 $outpath/
+	cp ./$outfile1 $outpath/
+	cp ./$outfile2 $outpath/
+	cp ./$outfile3 $outpath/
+	cp ./$outfile4 $outpath/
 
     rm -rf $midpath/$midfile
 	rm -rf $midpath/$file
@@ -65,4 +65,4 @@ do
 
     (( num2 += 1 ))
 
-done < list.txt
+done < ./Scripts/list.txt

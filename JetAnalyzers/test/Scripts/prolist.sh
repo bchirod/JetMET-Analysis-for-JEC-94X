@@ -1,14 +1,17 @@
 #!/bin/bash
-source /afs/cern.ch/project/eos/installation/cms/etc/setup.sh
 
 #----------- For PreL1batch.sh -------------------------
-#eos ls store/user/fengwang/QCDHLT_NoPU/*.root > list.txt
+#cd /eos/cms/store/group/phys_jetmet/bchitrod/data/11X_QCD_NoPU_JRA/
+#ls *.root > list.txt
+#mv /eos/cms/store/group/phys_jetmet/bchitrod/data/11X_QCD_NoPU_JRA/list.txt /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6/src/JetMETAnalysis/JetAnalyzers/test/Scripts/
 
 #----------- For L1Hadd.sh -------------------------
-#eos ls /store/group/phys_jetmet/fengwang/HLTBX25JECL1/output_ak4caloHLT*.root > list_ak4caloHLT.txt
-#eos ls /store/group/phys_jetmet/fengwang/HLTBX25JECL1/output_ak4pfHLT*.root   > list_ak4pfHLT.txt
-#eos ls /store/group/phys_jetmet/fengwang/HLTBX25JECL1/output_ak8caloHLT*.root > list_ak8caloHLT.txt
-#eos ls /store/group/phys_jetmet/fengwang/HLTBX25JECL1/output_ak8pfHLT*.root   > list_ak8pfHLT.txt
+cd /eos/cms/store/group/phys_jetmet/bchitrod/data/JEC1/PreL1/
+ls output_ak4caloHLT*.root > list_ak4caloHLT.txt
+ls output_ak4pfHLT*.root   > list_ak4pfHLT.txt
+ls output_ak8caloHLT*.root > list_ak8caloHLT.txt
+ls output_ak8pfHLT*.root   > list_ak8pfHLT.txt
+mv /eos/cms/store/group/phys_jetmet/bchitrod/data/JEC1/PreL1/*.txt /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6/src/JetMETAnalysis/JetAnalyzers/test/Scripts/
 
 #-------------- For L1batch.sh ---------------------------
 #eos ls /store/user/fengwang/QCDHLT/JRA_1*.root > list1.txt

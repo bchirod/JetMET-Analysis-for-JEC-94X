@@ -1,12 +1,12 @@
 #!/bin/bash
 export SCRAM_ARCH=slc6_amd64_gcc491
-cd /afs/cern.ch/work/f/fengwang/OnlineJEC/CMSSW_8_0_0/src/ # modify this to your own directory!
+cd /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6/src/ # modify this to your own directory!
 eval $(scramv1 runtime -sh)
 cd JetMETAnalysis/JetAnalyzers/test/
 
 # -------------- please change these paths to your own ones -------------
-inpath="/store/group/phys_jetmet/fengwang/HLTBX25JECL1/"
-outpath="/afs/cern.ch/work/f/fengwang/OnlineJEC/CMSSW_8_0_0/src/JetMETAnalysis/JetAnalyzers/test/"
+inpath="/eos/cms/store/group/phys_jetmet/bchitrod/data/JEC1/PreL1/"
+outpath="/afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6/src/JetMETAnalysis/JetAnalyzers/test/Scripts/"
 # -----------------------------------------------------------------------
 
 num=$1
@@ -39,7 +39,7 @@ do
         infile=$inpath$file
         echo $infile
         printf "Copy file from eos to local directory ..."
-        cmsStage $infile $outpath
+        cp $infile $outpath
         mv $outpath$file $outpath$outfile$label2".root" 
     else
         infile1=$outpath$outfile$label".root"
@@ -47,7 +47,7 @@ do
         echo $infile1
         echo $infile2
         printf "Copy file from eos to local directory ..."
-        cmsStage $infile2 $outpath
+        cp $infile2 $outpath
         printf "Hadd source files ..."
         hadd $outpath$outfile$label2".root" $outpath$outfile$label".root" $outpath$file
         printf "Hadd finish!!!"
@@ -58,4 +58,4 @@ do
     (( num1 += 1 ))
     (( num2 += 1 ))
 
-done < $list
+done < ./Scripts/$list
