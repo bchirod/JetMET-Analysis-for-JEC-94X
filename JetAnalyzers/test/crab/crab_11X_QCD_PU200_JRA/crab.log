@@ -1,0 +1,145 @@
+ak4pfHLT
+ak4caloHLT
+ak8pfHLT
+ak8caloHLT
+DEBUG 2020-07-17 06:03:59.252 UTC: 	 CRAB Client version: v3.200531
+DEBUG 2020-07-17 06:03:59.252 UTC: 	 Running on: Linux lxplus753.cern.ch 3.10.0-1127.8.2.el7.x86_64 #1 SMP Tue May 12 16:57:42 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-07-17 06:03:59.266 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-07-17 06:03:59.266 UTC: 	 Executing command: 'submit'
+DEBUG 2020-07-17 06:03:59.267 UTC: 	 Found CRAB cache file /afs/cern.ch/user/b/bchitrod/.crab3
+INFO 2020-07-17 06:03:59.268 UTC: 	 Will use CRAB configuration file crabConfig_QCD_PU200_JRA.py
+DEBUG 2020-07-17 06:03:59.268 UTC: 	 Loading CRAB configuration file.
+DEBUG 2020-07-17 06:03:59.274 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-07-17 06:03:59.290 UTC: 	 Checking credentials
+DEBUG 2020-07-17 06:03:59.291 UTC: 	 Found proxy file /tmp/x509up_u109101
+DEBUG 2020-07-17 06:03:59.291 UTC: 	 Getting proxy life time left
+DEBUG 2020-07-17 06:03:59.999 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u109101 -timeleft
+ output : 43115
+
+ error: 
+ retcode : 0
+DEBUG 2020-07-17 06:04:00.611 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u109101 -actimeleft
+ output : 43114
+
+ error: 
+ retcode : 0
+DEBUG 2020-07-17 06:04:00.611 UTC: 	 Proxy lifetime 43115 secs is different from voms extension lifetime 43114 secs for proxy: /tmp/x509up_u109101
+DEBUG 2020-07-17 06:04:00.611 UTC: 	 Proxy valid for 11:58:34 hours
+DEBUG 2020-07-17 06:04:01.318 UTC: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u109101 voms-proxy-info -fqan
+ output : /cms/Role=NULL/Capability=NULL
+
+ error: 
+ retcode : 0
+DEBUG 2020-07-17 06:04:01.455 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+DEBUG 2020-07-17 06:04:01.566 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=bchitrod/CN=825868/CN=Bhakti Kanulal Chitroda
+
+ error: 
+ retcode : 0
+DEBUG 2020-07-17 06:04:01.566 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-07-17 06:04:01.566 UTC: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=bchitrod/CN=825868/CN=Bhakti Kanulal Chitroda_cmsweb.cern.ch for credential name
+DEBUG 2020-07-17 06:04:01.871 UTC: 	 Executing : 
+ command : myproxy-info -l 407a3187fa626d10218eb35dd4b6ff04707ab5d2 -s myproxy.cern.ch
+ output : username: 407a3187fa626d10218eb35dd4b6ff04707ab5d2
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=bchitrod/CN=825868/CN=Bhakti Kanulal Chitroda
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  timeleft: 386:49:48  (16.1 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-07-17 06:04:01.872 UTC: 	 Myproxy is valid: 1392588
+DEBUG 2020-07-17 06:04:01.872 UTC: 	 Retrieving username ...
+DEBUG 2020-07-17 06:04:01.872 UTC: 	 Retrieving username from CRIC...
+DEBUG 2020-07-17 06:04:02.815 UTC: 	 username is bchitrod
+DEBUG 2020-07-17 06:04:02.821 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2020-07-17 06:04:02.821 UTC: 	 using bchitrod_CRAB as credential login name
+DEBUG 2020-07-17 06:04:03.125 UTC: 	 Executing : 
+ command : myproxy-info -l bchitrod_CRAB -s myproxy.cern.ch
+ output : username: bchitrod_CRAB
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=bchitrod/CN=825868/CN=Bhakti Kanulal Chitroda
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  timeleft: 386:49:52  (16.1 days)
+
+ error: 
+ retcode : 0
+DEBUG 2020-07-17 06:04:03.125 UTC: 	 Myproxy is valid: 1392592
+DEBUG 2020-07-17 06:04:03.126 UTC: 	 Command use: submit
+DEBUG 2020-07-17 06:04:03.126 UTC: 	 Options use: ['crabConfig_QCD_PU200_JRA.py']
+DEBUG 2020-07-17 06:04:03.215 UTC: 	 CRABClient version: v3.200531
+DEBUG 2020-07-17 06:04:03.215 UTC: 	 Instance is prod
+DEBUG 2020-07-17 06:04:03.215 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2020-07-17 06:04:03.215 UTC: 	 Command url /crabserver/prod/workflow
+DEBUG 2020-07-17 06:04:03.215 UTC: 	 Started submission
+DEBUG 2020-07-17 06:04:03.215 UTC: 	 Working on /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6/src/JetMETAnalysis/JetAnalyzers/test/crab/crab_11X_QCD_PU200_JRA
+DEBUG 2020-07-17 06:04:03.348 UTC: 	 Loading required information from the environment
+DEBUG 2020-07-17 06:04:03.348 UTC: 	 Found CMSSW_11_1_0_pre6 for slc7_amd64_gcc820 with base /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6
+DEBUG 2020-07-17 06:04:03.348 UTC: 	 Loading required information from the environment
+DEBUG 2020-07-17 06:04:03.348 UTC: 	 Found CMSSW_11_1_0_pre6 for slc7_amd64_gcc820 with base /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6
+DEBUG 2020-07-17 06:04:03.348 UTC: 	 UNIQUE NAME: tarUUID 5cabef54-eb47-464a-a3d3-38c24cd1c329 
+DEBUG 2020-07-17 06:04:03.348 UTC: 	 self.config: from WMCore.Configuration import Configuration
+config = Configuration()
+config.section_('General')
+config.General.transferLogs = True
+config.General.requestName = '11X_QCD_PU200_JRA'
+config.section_('JobType')
+config.JobType.psetName = 'run_JRA_hlt_cfg.py'
+config.JobType.pluginName = 'Analysis'
+config.JobType.allowUndistributedCMSSW = True
+config.JobType.maxMemoryMB = 4000
+config.section_('Data')
+config.Data.inputDataset = '/QCD_Pt-15to3000_TuneCP5_Flat_14TeV-pythia8/bchitrod-crab_11X_step3_QCD_Pt_15to3000_Flat_14TeV_PU200-60766fb563b96856596ff693f9aed5e9/USER'
+config.Data.publication = False
+config.Data.unitsPerJob = 50
+config.Data.inputDBS = 'phys03'
+config.Data.splitting = 'FileBased'
+config.Data.outLFNDirBase = '/store/group/phys_jetmet/bchitrod/data/'
+config.section_('Site')
+config.Site.storageSite = 'T2_CH_CERN'
+
+DEBUG 2020-07-17 06:04:03.348 UTC: 	 self.config.JobType.psetName: run_JRA_hlt_cfg.py
+INFO 2020-07-17 06:04:03.348 UTC: 	 Importing CMSSW configuration run_JRA_hlt_cfg.py
+INFO 2020-07-17 06:04:05.031 UTC: 	 Finished importing CMSSW configuration run_JRA_hlt_cfg.py
+DEBUG 2020-07-17 06:04:05.031 UTC: 	 Writing CMSSW configuration to /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6/src/JetMETAnalysis/JetAnalyzers/test/crab/crab_11X_QCD_PU200_JRA/inputs/PSet.py
+DEBUG 2020-07-17 06:04:05.090 UTC: 	 The following EDM output files will be collected: []
+DEBUG 2020-07-17 06:04:05.090 UTC: 	 The following TFile output files will be collected: ['JRA.root']
+DEBUG 2020-07-17 06:04:05.090 UTC: 	 The following user output files (not listed as PoolOuputModule or TFileService in the CMSSW PSet) will be collected: 
+DEBUG 2020-07-17 06:04:05.090 UTC: 	 Loading required information from the environment
+DEBUG 2020-07-17 06:04:05.090 UTC: 	 Found CMSSW_11_1_0_pre6 for slc7_amd64_gcc820 with base /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6
+DEBUG 2020-07-17 06:04:05.090 UTC: 	 Making tarball in /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6/src/JetMETAnalysis/JetAnalyzers/test/crab/crab_11X_QCD_PU200_JRA/inputs/5cabef54-eb47-464a-a3d3-38c24cd1c329default.tgz
+DEBUG 2020-07-17 06:04:05.091 UTC: 	 Checking directory /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6/lib
+DEBUG 2020-07-17 06:04:05.091 UTC: 	 Adding directory /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6/lib to tarball
+DEBUG 2020-07-17 06:04:06.983 UTC: 	 Checking directory /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6/biglib
+DEBUG 2020-07-17 06:04:06.983 UTC: 	 Adding directory /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6/biglib to tarball
+DEBUG 2020-07-17 06:04:06.984 UTC: 	 Checking directory /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6/module
+DEBUG 2020-07-17 06:04:06.999 UTC: 	 Adding data directory /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6/src/L1Trigger/L1TGlobal/interface to tarball
+DEBUG 2020-07-17 06:04:07.011 UTC: 	 Adding data directory /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6/src/L1Trigger/L1TGlobal/data to tarball
+DEBUG 2020-07-17 06:04:07.878 UTC: 	 Adding data directory /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6/src/RecoJets/JetProducers/data to tarball
+DEBUG 2020-07-17 06:04:07.879 UTC: 	 Adding data directory /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6/src/RecoJets/JetProducers/interface to tarball
+DEBUG 2020-07-17 06:04:07.890 UTC: 	 Adding data directory /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6/src/RecoTauTag/HLTProducers/interface to tarball
+DEBUG 2020-07-17 06:04:07.899 UTC: 	 Adding data directory /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6/src/RecoTauTag/ImpactParameter/interface to tarball
+DEBUG 2020-07-17 06:04:07.906 UTC: 	 Adding data directory /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6/src/RecoTauTag/RecoTau/data to tarball
+DEBUG 2020-07-17 06:04:07.907 UTC: 	 Adding data directory /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6/src/RecoTauTag/RecoTau/interface to tarball
+DEBUG 2020-07-17 06:04:08.023 UTC: 	 Adding data directory /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6/src/JetMETAnalysis/JetAnalyzers/interface to tarball
+DEBUG 2020-07-17 06:04:08.031 UTC: 	 Adding data directory /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6/src/JetMETAnalysis/JetUtilities/interface to tarball
+DEBUG 2020-07-17 06:04:08.113 UTC: 	 Uploading archive /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6/src/JetMETAnalysis/JetAnalyzers/test/crab/crab_11X_QCD_PU200_JRA/inputs/5cabef54-eb47-464a-a3d3-38c24cd1c329default.tgz (3.994141.1 MB) to the CRAB cache. Using URI https://cmsweb.cern.ch/crabcache
+DEBUG 2020-07-17 06:04:12.302 UTC: 	 Loading required information from the environment
+DEBUG 2020-07-17 06:04:12.302 UTC: 	 Found CMSSW_11_1_0_pre6 for slc7_amd64_gcc820 with base /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6
+DEBUG 2020-07-17 06:04:12.303 UTC: 	 Making tarball in /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6/src/JetMETAnalysis/JetAnalyzers/test/crab/crab_11X_QCD_PU200_JRA/inputs/debugFiles.tgz
+DEBUG 2020-07-17 06:04:12.310 UTC: 	 Uploading archive /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6/src/JetMETAnalysis/JetAnalyzers/test/crab/crab_11X_QCD_PU200_JRA/inputs/debugFiles.tgz (3 KB) to the CRAB cache. Using URI https://cmsweb.cern.ch/crabcache
+DEBUG 2020-07-17 06:04:12.376 UTC: 	 Result uploading input files: 0bd7f0dea5f813d0ecf16f5b176f0dc7c35766045da31d407d56739aecc60a0f.tar.gz 
+INFO 2020-07-17 06:04:12.377 UTC: 	 Sending the request to the server at cmsweb.cern.ch
+DEBUG 2020-07-17 06:04:12.377 UTC: 	 Submitting {'maxjobruntime': 1250, 'extrajdl': [], 'ignorelocality': 0, 'savelogsflag': 1, 'useparent': 0, 'asyncdest': 'T2_CH_CERN', 'algoargs': 50, 'cachefilename': '0bd7f0dea5f813d0ecf16f5b176f0dc7c35766045da31d407d56739aecc60a0f.tar.gz', 'numcores': 1, 'addoutputfiles': [], 'generator': 'pythia', 'maxmemory': 4000, 'publishdbsurl': 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'priority': 10, 'jobsw': 'CMSSW_11_1_0_pre6', 'edmoutfiles': [], 'userfiles': [], 'primarydataset': '', 'inputdata': '/QCD_Pt-15to3000_TuneCP5_Flat_14TeV-pythia8/bchitrod-crab_11X_step3_QCD_Pt_15to3000_Flat_14TeV_PU200-60766fb563b96856596ff693f9aed5e9/USER', 'lfn': '/store/group/phys_jetmet/bchitrod/data/', 'dryrun': 0, 'workflow': 'crab_11X_QCD_PU200_JRA', 'cacheurl': u'https://cmsweb.cern.ch/crabcache', 'nonprodsw': 1, 'tfileoutfiles': ['JRA.root'], 'oneEventMode': 0, 'debugfilename': '86632841ae32718f95d6d39abd98dcf09f32ec347734b6bb1d9f792416d98273.tar.gz', 'saveoutput': 1, 'publication': 0, 'jobarch': 'slc7_amd64_gcc820', 'totalunits': 0, 'splitalgo': 'FileBased', 'ignoreglobalblacklist': 0, 'nonvaliddata': 0, 'dbsurl': 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSReader', 'publishgroupname': 0, 'jobtype': 'Analysis', 'publishname2': ''} 
+DEBUG 2020-07-17 06:04:12.377 UTC: 	 Encoded submit request: maxjobruntime=1250&ignorelocality=0&savelogsflag=1&useparent=0&asyncdest=T2_CH_CERN&algoargs=50&cachefilename=0bd7f0dea5f813d0ecf16f5b176f0dc7c35766045da31d407d56739aecc60a0f.tar.gz&numcores=1&generator=pythia&maxmemory=4000&publishdbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSWriter&priority=10&jobsw=CMSSW_11_1_0_pre6&primarydataset=&inputdata=%2FQCD_Pt-15to3000_TuneCP5_Flat_14TeV-pythia8%2Fbchitrod-crab_11X_step3_QCD_Pt_15to3000_Flat_14TeV_PU200-60766fb563b96856596ff693f9aed5e9%2FUSER&lfn=%2Fstore%2Fgroup%2Fphys_jetmet%2Fbchitrod%2Fdata%2F&dryrun=0&workflow=crab_11X_QCD_PU200_JRA&cacheurl=https%3A%2F%2Fcmsweb.cern.ch%2Fcrabcache&nonprodsw=1&oneEventMode=0&debugfilename=86632841ae32718f95d6d39abd98dcf09f32ec347734b6bb1d9f792416d98273.tar.gz&saveoutput=1&publication=0&jobarch=slc7_amd64_gcc820&totalunits=0&splitalgo=FileBased&ignoreglobalblacklist=0&nonvaliddata=0&dbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSReader&publishgroupname=0&jobtype=Analysis&publishname2=&tfileoutfiles=JRA.root
+DEBUG 2020-07-17 06:04:12.534 UTC: 	 Result: {u'result': [{u'RequestName': u'200717_060412:bchitrod_crab_11X_QCD_PU200_JRA'}]}
+INFO 2020-07-17 06:04:12.537 UTC: 	 Success: Your task has been delivered to the prod CRAB3 server.
+INFO 2020-07-17 06:04:12.537 UTC: 	 Task name: 200717_060412:bchitrod_crab_11X_QCD_PU200_JRA
+INFO 2020-07-17 06:04:12.537 UTC: 	 Project dir: ./crab_11X_QCD_PU200_JRA
+INFO 2020-07-17 06:04:12.537 UTC: 	 Please use ' crab status -d ./crab_11X_QCD_PU200_JRA ' to check how the submission process proceeds.
+DEBUG 2020-07-17 06:04:12.537 UTC: 	 About to return
+INFO 2020-07-17 06:04:12.540 UTC: 	 Log file is /afs/cern.ch/work/b/bchitrod/private/corr_jec/CMSSW_11_1_0_pre6/src/JetMETAnalysis/JetAnalyzers/test/crab/crab_11X_QCD_PU200_JRA/crab.log
