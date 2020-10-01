@@ -16,8 +16,8 @@ string JetInfo::get_legend_title(const string& alg, bool withSize, bool withAlg,
   else if (alg.find("ak")==0) { title = "Anti-k_{T} R="; tmp = tmp.substr(2); }
   else return alg;
   
-  string reco[10] = { "gen", "caloHLT", "calo", "pfHLT", "pfchsHLT", "pfchs", "pf", "trk", "jpt", "puppi" };
-  string RECO[10] = { "Gen", "Calo@HLT", "Calo", "PF@HLT", "PF+CHS@HLT", "PF+CHS", "PF", "Tracks", "JPT", "PF+PUPPI" };
+  string reco[11] = { "gen", "caloHLT", "calo", "pfHLT", "pfchsHLT", "pfchs", "pf", "trk", "jpt", "puppiHLT", "puppi" };
+  string RECO[11] = { "Gen", "Calo@HLT", "Calo", "PF@HLT", "PF+CHS@HLT", "PF+CHS", "PF", "Tracks", "JPT", "PUPPI@HLT", "PF+PUPPI" };
 
   string::size_type pos=string::npos; int ireco=-1;
   while (pos==string::npos&&ireco<10) { pos = tmp.find(reco[++ireco]); }
