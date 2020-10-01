@@ -57,7 +57,7 @@ public:
    map<evtid, pair<Long64_t, Long64_t>, evtid> fillMap(bool noPU, TString treeName);
    void GetNtuples(TString treeName = "t");
    void OpenOutputFile(TString outputPath = "./", TString order1 = "0", TString order2 = "0");
-   void SetJEC(TString JECPar = "parameters_ak4pfHLT.txt");
+   void SetJEC(TString JECPar = "parameters_ak4puppiHLT.txt");
    void SetNpvRhoNpuValues(int NBins, int Width) {NBinsNpvRhoNpu=NBins; npvRhoNpuBinWidth=Width;}
    void SetVptBins(vector<int> vptb) {vptBins = vptb;}
    void DeclareHistograms(bool reduceHistograms);

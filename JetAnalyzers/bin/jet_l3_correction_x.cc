@@ -425,8 +425,8 @@ string get_legend_title(const string& alg)
   else if (alg.find("ak")==0) { title = "Anti k_{T}, D="; tmp = tmp.substr(2); }
   else return alg;
   
-  string reco[9] = { "gen", "caloHLT", "calo", "pfHLT", "pfchsHLT", "pfchs", "pf", "trk", "jpt" };
-  string RECO[9] = { "(Gen)", "(Calo@HLT)", "(Calo)", "(PFlow@HLT)", "(PFlow+CHS@HLT)", "(PFlow+CHS)", "(PFlow)", "(Tracks)", "(JPT)" };
+  string reco[11] = { "gen", "caloHLT", "calo", "pfHLT", "pfchsHLT", "pfchs", "pf", "trk", "jpt", "puppiHLT", "puppi" };
+  string RECO[11] = { "(Gen)", "(Calo@HLT)", "(Calo)", "(PFlow@HLT)", "(PFlow+CHS@HLT)", "(PFlow+CHS)", "(PFlow)", "(Tracks)", "(JPT)", "(PUPPI@HLT)", "PF+PUPPI" };
 
   string::size_type pos=string::npos; int ireco=-1;
   while (pos==string::npos&&ireco<8) { pos = tmp.find(reco[++ireco]); }
@@ -466,6 +466,7 @@ string get_algorithm_suffix(const string& alg)
   else if (alg.find("pfl1")       ==3) result += "PFl1";
   else if (alg.find("pf")         ==3) result += "PF";
   else if (alg.find("trk")        ==3) result += "TRK";
+  else if (alg.find("puppiHLT")      ==3) result += "PUPPIHLT";
   else if (alg.find("tau")        ==3) result += std::string(alg, 3);
   cout<<"get_algorithm_suffix: result = "<<result<<" from alg = "<<alg<<endl;
   return result;
