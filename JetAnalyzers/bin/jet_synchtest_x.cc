@@ -290,7 +290,7 @@ void MatchEventsAndJets::DeclareHistograms(bool reduceHistograms) {
    //
    if(!reduceHistograms) {
       histograms["m_refpt_diff"]     = new TH1D("m_refpt_diff","refpt_diff;p_{T, j1}- p_{T, j2}; Number of events",300,-150,150);
-      histograms["m_refpdgid_diff"]  = new TH1D("m_refpdgid_diff","m_refpdgid_diff;pdgid_{j1}- pdgid_{j2}; Number of events",100,-50,50);
+      //      histograms["m_refpdgid_diff"]  = new TH1D("m_refpdgid_diff","m_refpdgid_diff;pdgid_{j1}- pdgid_{j2}; Number of events",100,-50,50);
       histograms["m_deltaPthat"]     = new TProfile("m_deltaPthat","m_deltaPthat;pthat_{pu}(GeV);pthat_{pu}-pthat_{nopu}(GeV)",300,0,3000);
       
       // To show the excees of jets at low-pt for the sample with pu.
@@ -560,10 +560,10 @@ void MatchEventsAndJets::DeclareHistograms(bool reduceHistograms) {
     }//pt
 
     //0, 1-3, 4, 5, 21, all, quarks
-    for (int ipdgid=0;ipdgid<NPDGIDcat;ipdgid++) {
-         hname = Form("p_offresVsrefpt_%s_pdgid_%s",detectorAbbreviation.Data(),pdgidstr[ipdgid].Data());
-         histograms[hname] = new TH2D(hname,hname+";p^{GEN}_{T}; p_{T}/p_{T}^{nopu};",NPtBins, vpt,1000,-300,300);
-    }//pdgid
+    //    for (int ipdgid=0;ipdgid<NPDGIDcat;ipdgid++) {
+    //   hname = Form("p_offresVsrefpt_%s_pdgid_%s",detectorAbbreviation.Data(),pdgidstr[ipdgid].Data());
+    //   histograms[hname] = new TH2D(hname,hname+";p^{GEN}_{T}; p_{T}/p_{T}^{nopu};",NPtBins, vpt,1000,-300,300);
+    //}//pdgid
   }
 
   //=========================================================
@@ -847,14 +847,14 @@ bool MatchEventsAndJets::FillHistograms(bool reduceHistograms) {
     int idet = JetInfo::getDetIndex(tpu->jteta->at(jpu));
     TString detectorAbbreviation = JetInfo::get_detector_abbreviation(detector_names[idet]);
     detectorAbbreviation.ToLower();
-    vector<int> pdgid_indecies = JetInfo::getPDGIDIndecies(tpu->refpdgid->at(jpu));
+    //    vector<int> pdgid_indecies = JetInfo::getPDGIDIndecies(tpu->refpdgid->at(jpu));
 
     //double eta_avg = 0.5*(tpu->jteta->at(jpu)+tnopu->jteta->at(jnopu));
     double offset     = tpu->jtpt->at(jpu) - tnopu->jtpt->at(jnopu);
     double offset_raw = -1.0;
     if(tpu_jtpt_raw.size()>0)
        offset_raw = tpu_jtpt_raw[jpu] - tnopu->jtpt->at(jnopu);
-    int diff_pdgid       = tpu->refpdgid->at(jpu) - tnopu->refpdgid->at(jnopu);
+    //    int diff_pdgid       = tpu->refpdgid->at(jpu) - tnopu->refpdgid->at(jnopu);
     double areaDiff      = tpu->jtarea->at(jpu) - tnopu->jtarea->at(jnopu);
     double resp          = tpu->jtpt->at(jpu) / tpu->refpt->at(jpu);   // response relative to reference jet
     double respTonopu    = tpu->jtpt->at(jpu) / tnopu->jtpt->at(jnopu);// response relative to no pu jet
@@ -924,7 +924,7 @@ bool MatchEventsAndJets::FillHistograms(bool reduceHistograms) {
 
        histograms["p_drVsrefpt"]    ->Fill(tpu->refpt->at(jpu),tpu->refdrjt->at(jpu));
        histograms["m_refpt_diff"]   ->Fill(tpu->refpt->at(jpu) - tnopu->refpt->at(jnopu));
-       histograms["m_refpdgid_diff"]->Fill(diff_pdgid);
+       //       histograms["m_refpdgid_diff"]->Fill(diff_pdgid);
 
        //2D histo npv vs. rho with 15<offset<15.5
        if (offset > 15 && offset < 15.5)  histograms["p_npvVsRho_offset_15_15h"]->Fill(tpu->rho_hlt,tpu->npv);
@@ -993,10 +993,10 @@ bool MatchEventsAndJets::FillHistograms(bool reduceHistograms) {
     hname = Form("p_offresVsrefpt_%s_npu%i_%i",detectorAbbreviation.Data(),0,((NBinsNpvRhoNpu-1)*npvRhoNpuBinWidth)+npvRhoNpuBinWidth-1);
     histograms[hname]->Fill(tpu->refpt->at(jpu),offset);
 
-    for (unsigned int ipdgid=0; ipdgid<pdgid_indecies.size(); ipdgid++) {
-      hname = Form("p_offresVsrefpt_%s_pdgid_%s",detectorAbbreviation.Data(),pdgidstr[ipdgid].Data());
-      histograms[hname]->Fill(tpu->refpt->at(jpu),offset);
-    }
+    //    for (unsigned int ipdgid=0; ipdgid<pdgid_indecies.size(); ipdgid++) {
+    // hname = Form("p_offresVsrefpt_%s_pdgid_%s",detectorAbbreviation.Data(),pdgidstr[ipdgid].Data());
+    //histograms[hname]->Fill(tpu->refpt->at(jpu),offset);
+    //}
 
     hname = Form("p_resnopuVsrefpt_%s_npv%i_%i",detectorAbbreviation.Data(),inpv_low,inpv_high);
     histograms[hname]->Fill(tpu->refpt->at(jpu),respTonopu);
