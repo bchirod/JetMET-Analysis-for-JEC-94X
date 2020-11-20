@@ -66,8 +66,9 @@ TGraph2DErrors * getGraph2D(int iEta, TProfile3D * prof,
         profPt ->GetBinContent(iEta,itnpu,irefpt)  > 0 &&
         profPt ->GetBinError  (iEta,itnpu,irefpt)  > 0.1 &&
         // profPt ->GetBinError  (iEta,itnpu,irefpt)  < 10*log10(profPt ->GetBinContent(iEta,itnpu,irefpt)) &&
-        profRho->GetBinContent(iEta,itnpu,irefpt)  > 0 &&
-        profRho->GetBinError  (iEta,itnpu,irefpt)  > 0.1){
+	profRho->GetBinContent(iEta,itnpu,irefpt)  > 0 &&
+	profRho->GetBinError  (iEta,itnpu,irefpt)  > 0.1
+	    ){
 
           // get the relevant values
           double rho  = profRho->GetBinContent(iEta, itnpu, irefpt);
@@ -89,7 +90,6 @@ TGraph2DErrors * getGraph2D(int iEta, TProfile3D * prof,
     }// itnpu
 
     cout << "\tgraph has (Entries,Evts):  (" << graph->GetN() << "," << nEvt << ")" << endl;
-
     return graph;
 
 } // getGraph2D
@@ -192,9 +192,11 @@ void fitClosurePlots(TProfile3D * prof,
           // (fabs(prof->GetBinError(iEta,itnpu,irefpt)/prof->GetBinContent(iEta,itnpu,irefpt)))>0.01 &&// 0.05 ==> 0.01
           profPt ->GetBinContent(iEta,itnpu,irefpt)  > 0 &&
           profPt ->GetBinError  (iEta,itnpu,irefpt)  > 0.1 &&
+	      //fitResults[iEta-1].fit->Eval(rho,pt) != 0 &&
           // profPt ->GetBinError  (iEta,itnpu,irefpt)  < 10*log10(profPt ->GetBinContent(iEta,itnpu,irefpt)) &&
           profRho->GetBinContent(iEta,itnpu,irefpt)  > 0 &&
-          profRho->GetBinError  (iEta,itnpu,irefpt)  > 0.1){
+	  profRho->GetBinError  (iEta,itnpu,irefpt)  > 0.1
+	      ){
 
             h_eff_entries->Fill(prof->GetBinEffectiveEntries(Gbin));
 

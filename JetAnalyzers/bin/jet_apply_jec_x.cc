@@ -71,7 +71,7 @@ int main(int argc,char**argv)
   string         output     = cl.getValue<string>  ("output",       "");
   string         jecpath    = cl.getValue<string>  ("jecpath",      "");
   vector<string> algs       = cl.getVector<string> ("algs",         "");
-  bool           L1FastJet  = cl.getValue<bool>    ("L1FastJet", false);
+  bool           L1FastJet  = cl.getValue<bool>    ("L1FastJet",  true);
   vector<string> postfix    = cl.getVector<string> ("postfix",      "");
   bool           useTags    = cl.getValue<bool>    ("useTags",    true);
   bool           saveitree  = cl.getValue<bool>    ("saveitree",  true);
@@ -90,10 +90,10 @@ int main(int argc,char**argv)
   if (jecpath.empty()) {
     string cmssw_base(getenv("CMSSW_BASE"));
     string cmssw_release_base(getenv("CMSSW_RELEASE_BASE"));
-    jecpath = cmssw_base + "/src/CondFormats/JetMETObjects/data";
+    jecpath = cmssw_base + "/src/JetMETAnalysis/JetAnalyzers/test/Test3/";
     struct stat st;
     if (stat(jecpath.c_str(),&st)!=0)
-      jecpath = cmssw_release_base + "/src/CondFormats/JetMETObjects/data";
+      jecpath = cmssw_release_base + "/src/JetMETAnalysis/JetAnalyzers/test/Test3/";
     if (stat(jecpath.c_str(),&st)!=0) {
       cout<<"ERROR: tried to set jecpath but failed, abort."<<endl;
       return -1;
@@ -242,10 +242,10 @@ int main(int argc,char**argv)
                 continue;
              }
 
-             if (jetInfo.isHLT())
-                corrector->setRho(JRAEvt->rho_hlt);
+	     if (jetInfo.isHLT())
+	       corrector->setRho(JRAEvt->rho_hlt);
              else
-                corrector->setRho(JRAEvt->rho);
+	       corrector->setRho(JRAEvt->rho);
           }
           if(!L1FastJet) corrector->setNPV(JRAEvt->npv);
           float jec=corrector->getCorrection();

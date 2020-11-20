@@ -122,11 +122,11 @@ void SynchPlots(TString inputDir="./",TString calgo1="ak5pf",TString calgo2="ak5
    }
   
    // Event-Matching performance 
-   if(histograms.find("m_refpdgid_diff")!=histograms.end()) {
-      c = new TCanvas("RefPdgidDiff","RefPdgidDiff");
-      c->SetLogy();
-      histograms["m_refpdgid_diff"]->Draw();
-   }
+   //if(histograms.find("m_refpdgid_diff")!=histograms.end()) {
+   //   c = new TCanvas("RefPdgidDiff","RefPdgidDiff");
+   //   c->SetLogy();
+   //   histograms["m_refpdgid_diff"]->Draw();
+   //}
   
    // Sanity check: g_pthat
    if(histograms.find("m_deltaPthat")!=histograms.end()) {
@@ -440,13 +440,13 @@ void SynchPlots(TString inputDir="./",TString calgo1="ak5pf",TString calgo2="ak5
       hname = Form("m_njet_pt_npv%i_%i_unmatch",npvRhoNpuBins[ibin].first,npvRhoNpuBins[ibin].second);
       pnJetPt[ibin] = dynamic_cast<TProfile*>(histograms[hname]);
    }
-   c = getCanvasIntegral("IntePUJetDistribution",algo,"Integral # PU Jets /event",pnJetPt,npvRhoNpuBins);
-   c->SetLogx();
-   c->Draw();
+   //c = getCanvasIntegral("IntePUJetDistribution",algo,"Integral # PU Jets /event",pnJetPt,npvRhoNpuBins);
+   //c->SetLogx();
+   //c->Draw();
   
-   c = getCanvasAverage("AvgPUJetEneDistribution",algo,"Avg. Jet Ene (GeV)",pnJetPt,npvRhoNpuBins);
-   c->SetLogx();
-   c->Draw();
+   //c = getCanvasAverage("AvgPUJetEneDistribution",algo,"Avg. Jet Ene (GeV)",pnJetPt,npvRhoNpuBins);
+   //c->SetLogx();
+   //c->Draw();
   
    //
    //	2D histogram of jtarea diff. vs. refpt	
@@ -1369,13 +1369,13 @@ void SynchPlots(TString inputDir="./",TString calgo1="ak5pf",TString calgo2="ak5
    c->Draw();
 	clearHistograms(hResRho,hOffRho,hOffPdgid,pOffPF,NPDGIDcat);  
 
-   for(int ibin=0; ibin<NPDGIDcat; ibin++) {
-      hname = Form("p_offresVsrefpt_bb_pdgid_%s",pdgidstr[ibin].Data());
-      hOffPdgid[ibin] = dynamic_cast<TH2D*>(histograms[hname]);
-   }
-   c = getGausMeanOffset("OffMeanpdgidRef_BB","<offset> (GeV)",algo,hOffPdgid,fixedRange,npvRhoNpuBins);
-   c->Draw();
-   clearHistograms(hResRho,hOffRho,hOffPdgid,pOffPF,npvRhoNpuBins.size());
+	//for(int ibin=0; ibin<NPDGIDcat; ibin++) {
+	//hname = Form("p_offresVsrefpt_bb_pdgid_%s",pdgidstr[ibin].Data());
+	//hOffPdgid[ibin] = dynamic_cast<TH2D*>(histograms[hname]);
+	// }
+	//  c = getGausMeanOffset("OffMeanpdgidRef_BB","<offset> (GeV)",algo,hOffPdgid,fixedRange,npvRhoNpuBins);
+	//c->Draw();
+	//clearHistograms(hResRho,hOffRho,hOffPdgid,pOffPF,npvRhoNpuBins.size());
 
   
    if (writeFlag == true)
